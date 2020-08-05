@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+</style>
+<body>
+    <div class="app">
+
+        <ul>
+            <li v-for="(a,b) in arr1">
+                <span>学生姓名:{{a.name}}</span>
+                <span>学生年龄:{{a.age}}</span>
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(a,b) in dog">
+                <span>{{a}}{{b}}</span>
+
+            </li>
+        </ul>
+        <div v-text="msg"></div>
+        <div v-html="msg"></div>
+    </div>
+
+    <script>
+       let vm= new Vue({
+            el:'.app',
+            data:{
+                msg:'<h1>hello </h1>',
+                arr:[1,2,3,'lily'],
+                arr1:[
+                    {name:'zs',
+                    age:15},
+                    {name:'zs',
+                        age:13},
+                    {name:'zs',
+                        age:14}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

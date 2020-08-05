@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+    <div class="app" v-pre>
+        {{a}}
+    </div>
+
+    <script>
+       let vm= new Vue({
+            el:'.app',
+            data:{
+                src:'http://www.baidu.com',
+                a:'blue',
+                dd:'dd',
+                sort:true
+            }
+
+
+        })
+        $ node -v
+    </script>
+</body>
+</html>

@@ -20,6 +20,8 @@
     <div class="app">
         <a v-bind:href="src">百度</a>
         <div v-bind:class="a">背景</div>
+        <div v-bind:class="{blue:sort}">dd</div>
+        <button @mouseenter="fu"></button>
     </div>
 
     <script>
@@ -28,13 +30,12 @@
             data:{
                 src:'http://www.baidu.com',
                 a:'blue',
-                dd:'dd'
+                dd:'dd',
+                sort:true
             },
-           computed:{
-                arr1f(){
-                    return this.arr1.sort( (a,b) => {
-                        return a.age-b.age;
-                    })
+           methods:{
+                fu(){
+                    this.sort=!this.sort
                 }
         }
 

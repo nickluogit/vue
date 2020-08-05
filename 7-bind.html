@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+    .red{
+        background: red;
+    }
+    .blue{
+        background: blue;
+    }
+</style>
+<body>
+    <div class="app">
+        <a v-bind:href="src">百度</a>
+        <div v-bind:class="a">背景</div>
+    </div>
+
+    <script>
+       let vm= new Vue({
+            el:'.app',
+            data:{
+                src:'http://www.baidu.com',
+                a:'blue',
+                dd:'dd'
+            },
+           computed:{
+                arr1f(){
+                    return this.arr1.sort( (a,b) => {
+                        return a.age-b.age;
+                    })
+                }
+        }
+
+        })
+    </script>
+</body>
+</html>

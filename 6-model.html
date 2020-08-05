@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+</style>
+<body>
+    <div class="app">
+        <input type="radio" name="sex" v-model="sex" value="1">男
+        <input type="radio" name="sex" v-model="sex" value="2">女
+        <p>{{sex}}</p>
+
+        <input type="checkbox" name="hobby" value="lan"  v-model="hobby">篮球
+        <input type="checkbox" name="hobby" value="lan1"  v-model="hobby">足球
+        <input type="checkbox" name="hobby" value="lan2"  v-model="hobby">排球
+        <p>{{hobby}}</p>
+
+        <select name="school" id="d" v-model="school">
+            <option value="1">清华</option>
+            <option value="2" selected>北大</option>
+            <option value="2">复旦</option>
+        </select>
+        <p>{{school}}</p>
+
+        <textarea name="miaoshu" id="" cols="30" rows="10" v-model.lazy="miaoshu"></textarea> 修饰符lazy,number,trim
+        <p>{{miaoshu}}</p>
+
+        <input type="number" v-model="number">
+        <p>{{number}}</p>
+
+        <input type="range" v-model="ra"> 还有date,email等
+        <p>{{ra}}</p>
+    </div>
+
+    <script>
+
+
+       let vm= new Vue({
+            el:'.app',
+            data:{
+                ra:'',
+                number:'',
+                miaoshu:'',
+                sex:'',
+                hobby:[],
+                school:'',
+                arr:[1,2,3,'lily'],
+                arr1:[
+                    {name:'zs',
+                    age:15},
+                    {name:'zs',
+                        age:13},
+                    {name:'zs',
+                        age:14}
+                ]
+            },
+           computed:{
+                arr1f(){
+                    return this.arr1.sort( (a,b) => {
+                        return a.age-b.age;
+                    })
+                }
+        }
+
+        })
+    </script>
+</body>
+</html>

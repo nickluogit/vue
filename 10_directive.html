@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+    <div class="app" v-pre>
+       <div v-wei='bg'>dd</div>
+    </div>
+
+    <script>
+        Vue.directives('wei',(el,binding,vNode)=>{
+
+        })
+        // Vue.directive('wei',(el,binding,vNode)=>{
+        //
+        // });
+
+       let vm= new Vue({
+            el:'.app',
+            data:{
+                bg:'#ddd'
+            }
+        })
+    </script>
+</body>
+</html>

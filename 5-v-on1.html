@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+    .fl{
+        width: 33%;
+        height: 200px;
+        background: blue;
+        transition: all 1s linear;
+
+    }
+    .flc{
+        width: 33%;
+        height: 200px;
+        background: yellow;
+        transform:rotate(7deg);
+
+
+    }
+    .fm{
+        width: 33%;
+        height: 200px;
+        background: yellow;
+        transition: all 1s linear;
+        position: relative;
+        top:0px;
+        left:0px;
+    }
+    .fmc{
+        width: 33%;
+        height: 200px;
+        background: blue;
+        position: relative;
+        top:20px;
+        left: 30px;
+
+    }
+    .fr{
+        width: 33%;
+        height: 200px;
+        background: green;
+        transition: all 1s linear;
+        box-shadow:  0px 0px 10px 10px #999 inset;
+    }
+    .frc{
+        width: 33%;
+        height: 200px;
+        opacity: 0;
+
+    }
+    button{
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+
+
+    }
+    .first >div{
+        float: left;
+    }
+</style>
+<body>
+    <div class="first">
+        <div class="fl" v-bind:class="bol?'flc':''">ff</div>
+        <div class="fm" v-bind:class="bol?'fmc':''">mm</div>
+        <div class="fr" v-bind:class="bol?'frc':''">
+            <button @click="fun">点击</button>
+        </div>
+    </div>
+    <script>
+        let vm=new Vue({
+            el:'.first',
+            data:{
+                bol:false,
+
+            },
+            methods:{
+                fun(){
+                    this.bol=!this.bol;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -110,7 +110,7 @@
        computed:{
            total(){
                let sum=0;
-               this.pro.filter((elem,index)=>{
+               let arr1=this.pro.map((elem,index)=>{
                    if(elem.redok){
                        sum+=parseInt(elem.price);
                    }
@@ -119,6 +119,7 @@
            }
        }
    })
+
 </script>
 </body>
 </html>

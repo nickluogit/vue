@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+    <div class="app">
+        <button @click="fun">2</button>
+       <div>{{bg[1]}}</div>
+    </div>
+
+    <script>
+
+       let vm= new Vue({
+            el:'.app',
+            data:{
+                bg:[1,3,4]
+            },
+           methods:{
+                fun:function () {
+                    Vue.set(this.bg,1,2)
+                }
+           }
+        })
+    </script>
+</body>
+</html>

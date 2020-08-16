@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+    <div class="app">
+        <button @click="count++">add</button>
+        <button @click="destroy"></button>
+        {{count}}
+    </div>
+
+    <script>
+
+       let vm= new Vue({
+            el:'.app',
+            data:{
+              count:0
+            },
+            methods:{
+              destroy(){
+                  this.$destroy();
+              }
+            },
+           beforeCreate(){
+                console.log(1)
+
+           },
+           created(){
+               console.log(2)
+               console.log(this.$data)
+           },
+           beforeMount(){
+               console.log(3)
+           },
+           mounted(){
+               console.log(4)
+
+           },
+           beforeUpdate(){
+               console.log(5)
+           },
+           updated(){
+               console.log(6)
+           },
+           beforeDestroy(){
+               console.log(7)
+           },
+           destroyed(){
+               console.log(8)
+           }
+
+        })
+    </script>
+</body>
+</html>

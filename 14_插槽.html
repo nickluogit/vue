@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+
+    <div class="app">
+        <t1 @change="bol=false">
+            <span v-show="bol" slot="title">hello world</span>
+            <template slot="name">
+               用户名: <input type="text">
+                密码:<input type="text">
+            </template>
+        </t1>
+
+    </div>
+
+    <template id="t1">
+        <div>
+            <h1><slot name="title"></slot></h1>
+            <button @click="$emit('change')">点击</button>
+            <form action="">
+                <slot name="name"></slot>
+            </form>
+        </div>
+    </template>
+    <script>
+
+       let vm= new Vue({
+            el:'.app',
+           data:{
+             bol:true
+           },
+           components:{
+                t1:{
+                    template:'#t1'
+                }
+           }
+
+        })
+    </script>
+</body>
+</html>

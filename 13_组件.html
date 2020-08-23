@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+    <div class="app">
+        <wei></wei>
+        <button1></button1><button1></button1>
+        <user-name></user-name>
+        <todolist v-for="(item,index) in pro" :name="item.name" :price="item.price"></todolist>
+    </div>
+
+    <script>
+        Vue.component('wei',{
+            template:'<div>hello world</div>',
+        });
+        Vue.component('todolist',{
+            props:['name','price'],
+            template:'<li>{{name}}{{price}}</li>'
+        });
+        Vue.component('button1',{
+            template:'<button @click="count++">{{count}}</button>',
+            data:function () {
+                return {count:0}
+            }
+        })
+       let vm= new Vue({
+            el:'.app',
+           components:{
+                userName:{
+                    template:'<input type="text">'
+                }
+           },
+           data:{
+               pro:[
+                   {name:'衣服',price:22,redok:false},
+                   {name:'衣服',price:23,redok:false},
+                   {name:'衣服',price:23,redok:false},
+                   {name:'衣服',price:12,redok:false},
+                   {name:'衣服',price:123,redok:false},
+                   {name:'裤子',price:123,redok:false}
+               ]
+           }
+        })
+    </script>
+</body>
+</html>

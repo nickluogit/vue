@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<style>
+    ul{
+       list-style: none;
+    }
+
+</style>
+<body>
+
+    <div class="app">
+        <button @click="fun">点击</button>
+        {{count}}
+    </div>
+    <script>
+
+       let vm= new Vue({
+            el:'.app',
+           data:{
+             bol:true,
+               count:1
+           },
+           methods:{
+            fun(){
+                this.bol=!this.bol
+               }
+           },
+           watch:{
+                bol:function () {
+                    return this.count++
+                }
+           }
+
+        })
+    </script>
+</body>
+</html>
